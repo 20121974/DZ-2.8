@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Integers {
+    private
     List<Integers> integers = new LinkedList<>(20);
 
     public List<Integers> getIntegers() {

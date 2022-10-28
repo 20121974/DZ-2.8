@@ -1,4 +1,4 @@
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Set;
 
 import static com.sun.tools.javac.util.Assert.check;
@@ -7,32 +7,27 @@ public class Product <A> {
     private String title;//название
     private double price;//цена
     private int quantity;//количество, кг
-    private Set<Product> product;
+    HashMap<String, Double> map = new HashMap <>();
 
-    public Set<Product> getProduct() {
-        return product;
+    public void putTitle() {//добавить продукт
+        if (price >= 1){
+        map.put(title, price);}
     }
 
-    public Product(Set<Product> product) {
-        this.product = product;
-    }
-
-    Set<String> set = new HashSet<>();
-
-
-    public void addTitle() {
-        set.add(title);
-    }
-
-    public void purchasedTitle() {
+    public void purchasedTitle() {//приобрести продукты
         System.out.println("Товар куплен");
     }
-
-    public void removeTitle() {
-        set.remove(title);
+    public void keySet (){//все продукты
+        map.keySet();
+    }//все ключи
+    public void values (){//все количество продуктов
+        map.values();
     }
+    public void removeTitle() {
+        map.remove(title);
+    }//удалить продукты
 
-    public Product(String title, double price, int quantity) {
+    public Product() {
         this.title = title;
         this.price = price;
         this.quantity = quantity;
@@ -47,10 +42,6 @@ public class Product <A> {
 
     }
 
-//    public Product(Set<String> set) {
-//        this.set = set;
-//    }
-
     public void setPrice(double price) {
         this.price = price;
     }
@@ -59,8 +50,8 @@ public class Product <A> {
         this.quantity = quantity;
     }
 
-    public void setSet(Set<String> set) {
-        this.set = set;
+    public void setMap(Set<String> set) {
+        this.map = map;
     }
 
     public String getTitle() {
@@ -75,8 +66,5 @@ public class Product <A> {
         return quantity;
     }
 
-    public Set<String> getSet() {
-        return set;
-    }
 }
 

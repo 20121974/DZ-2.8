@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-public class Recipe {
+public class Recipe extends Product {
     private String lotsOfProducts;//Множество продуктов
     private double totalCostOfAllProductsInThisRecipe;// Суммарная стоимость всех продуктов у данного рецепта
     private String nameOfTheRecipe;//Название рецепта
@@ -17,6 +17,7 @@ public class Recipe {
         set.add(recipes.toString());
     }
     public Recipe(String lotsOfProducts, double totalCostOfAllProductsInThisRecipe, String nameOfTheRecipe) {
+        super();
         this.lotsOfProducts = lotsOfProducts;
         this.totalCostOfAllProductsInThisRecipe = totalCostOfAllProductsInThisRecipe;
         this.nameOfTheRecipe = nameOfTheRecipe;
@@ -42,8 +43,19 @@ public class Recipe {
         return lotsOfProducts;
     }
 
-    public double getTotalCostOfAllProductsInThisRecipe() {
+    public double getTotalCostOfAllProductsInThisRecipe() {//общая стоимость продуктов в этом рецепте
+        for (Recipe recipe: getRecipes()) {
+            totalCostOfAllProductsInThisRecipe = keySet(getTitle()) * values(getQuantity());
+        }
         return totalCostOfAllProductsInThisRecipe;
+    }
+
+    private double values(int quantity) {
+        return 0;
+    }
+
+    private double keySet(String title) {
+        return 0;
     }
 
     public String getNameOfTheRecipe() {

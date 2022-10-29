@@ -55,7 +55,7 @@ public class Product <A> {
     }
 
     public static String getTitle() {
-        return title;
+        return getTitle();
     }
 
     public double getPrice() {
@@ -63,7 +63,7 @@ public class Product <A> {
     }
 
     public static int getQuantity() {
-        return quantity;
+        return getQuantity();
     }
 
 }

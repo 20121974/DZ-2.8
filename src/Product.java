@@ -54,7 +54,7 @@ public class Product <A> {
         this.map = map;
     }
 
-    public String getTitle() {
+    public static String getTitle() {
         return title;
     }
 
@@ -62,7 +62,7 @@ public class Product <A> {
         return price;
     }
 
-    public int getQuantity() {
+    public static int getQuantity() {
         return quantity;
     }
 

@@ -8,11 +8,13 @@ public class TaskList {//список задач
     public TaskList(Set<Integer> taskList) {
         this.taskList = taskList;
     }
+
     public Set<Integer> getTaskList() {
         return taskList;
     }
-    public static void addTaskList(Set<Integer> taskList){
-        for(Integer TaskList : taskList) {
+
+    public static void addTaskList(Set<Integer> taskList) {
+        for (Integer TaskList : taskList) {
             Random random = (Random) taskList;
             Integer taskList1;
             taskList1 = (Integer) random.ints(9);
@@ -21,6 +23,7 @@ public class TaskList {//список задач
             taskList = taskList1 * taskList2;
             addTaskList(taskList);
             System.out.println(taskList);
+        }
     }
 
 //    taskList.add("2*2");
@@ -38,11 +41,4 @@ public class TaskList {//список задач
 //    taskList.add("3*7");
 //    taskList.add("3*8");
 //    taskList.add("3*9");
-
-
-
 }
-
-    private static Integer getIntegers(int i) {
-        return null;
-    }

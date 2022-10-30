@@ -7,23 +7,12 @@ public class Passport {
     private String name;
     private String middleName;//отчество
     private String dateOfBirth;//дата рождения
-    private static Map<String, Passport> passportMap = new HashMap<>();
 
-    public Passport(Map<String, Passport> passportMap) {
-        this.passportMap = passportMap;
-    }
-
-    public static Passport getPassportMap() {
-        return (Passport) Passport.passportMap;
-    }
-    public void addPassport(){
-        getPassportMap().put(passportMap.getOrDefault(getPassportNumber(), Passport.getPassportMap()));
-    }
 
     private void put(Passport orDefault) {
     }
 
-    public Object getPassportNumber() {
+    public static Object getPassportNumber() {
         return passportNumber;
     }
 
@@ -42,4 +31,7 @@ public class Passport {
     public String getDateOfBirth() {
         return dateOfBirth;
     }
+
+
+
 }

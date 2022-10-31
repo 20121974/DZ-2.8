@@ -2,25 +2,28 @@ import java.util.*;
 
 public class Integer {
 
-    private Set<java.lang.Integer> integers = new HashSet<java.lang.Integer>(20);
+    private Set<Integer> integers = new HashSet<>(20);
 
-    public Integer(Set<java.lang.Integer> integers) {
+    public Integer(Set<Integer> integers) {
         this.integers = integers;
     }
-    public void addInteger(int i){
-        integers.add(java.lang.Integer.SIZE);
-        for(int j=0; j < integers.size() ; j++) {
-            Random random = (Random) integers;
-            j = random.nextInt(1000);
-            integers.removeIf(integer -> integer % 2 == 1);
-            System.out.println(integers.size());
-        }
 
-    }
-
-    public Set<java.lang.Integer> getIntegers() {
+    public Set<Integer> getIntegers() {
         return integers;
     }
 
+    public void addInteger(int i) {
+        Random random = (Random) integers;
+        integers.add((Integer) integers);
+        for (Iterator<Integer> iterator = integers.iterator(); iterator.hasNext(); ) {
+            Integer integer = iterator.next();
+            if (integers % 2 == 0) {
+                iterator.remove();
+            }
 
+
+        }
+
+
+    }
 }

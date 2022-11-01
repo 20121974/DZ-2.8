@@ -7,8 +7,8 @@ import java.util.*;
 
 public class Recipe {
     private String nameOfRecipe;//Название рецепта
-    private final Set<Product> productsList = new HashSet<>();
-    //private Map<Products.Product, Integer> recipe = new HashMap<>();
+    //private final Set<Product> productsList = new HashSet<>();
+    private final Map<Product, Integer> products = new HashMap<>();
     private int totalCostRecipe;// Суммарная стоимость всех продуктов у данного рецепта
 
 
@@ -18,15 +18,22 @@ public class Recipe {
         recipe.add(String.valueOf(this));
     }
     public void addProductOfRecipe(Product product, int requiredQuantity){
-        if (product.contains(product)){
+        if (products.containsKey(product)){
             throw new RuntimeException("Продукт уже добавлен в рецепт!");
         }
-        product.add(product);
-        totalCostRecipe = totalCostRecipe + product.getPrice() * requiredQuantity;//требуемое количество
+        products.put(product, requiredQuantity);
+        //totalCostRecipe = totalCostRecipe + product.getPrice() * requiredQuantity;//требуемое количество
+    }
+    public  int getCostForProduct(){
+        int sum = 0;
+        for (Product key : products.keySet()) {
+            sum += products.get(key) * key.getPrice();
+        }
+        return sum;
     }
     @Override
     public String toString() {
-        return "Recips.Recipe{" +
+        return "Recipes.Recipe{" +
                 "nameOfRecipe='" + nameOfRecipe + '\'' +
                 '}';
     }
@@ -36,23 +43,25 @@ public class Recipe {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Recipe recipe = (Recipe) o;
-        return totalCostRecipe == recipe.totalCostRecipe && nameOfRecipe.equals(recipe.nameOfRecipe) && productsList.equals(recipe.productsList);
+        return totalCostRecipe == recipe.totalCostRecipe && nameOfRecipe.equals(recipe.nameOfRecipe) && products.equals(recipe.products);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameOfRecipe, productsList, totalCostRecipe);
+        return Objects.hash(nameOfRecipe, products, totalCostRecipe);
     }
 
     public double getTotalCostRecipe() {//общая стоимость продуктов в этом рецепте
         return totalCostRecipe;
     }
 
-    public Set<Product> getProductsList() {
-        return productsList;
-    }
+
 
     public String getNameOfRecipe() {
         return nameOfRecipe;
+    }
+
+    public Map<Product, Integer> getProducts() {
+        return products;
     }
 }

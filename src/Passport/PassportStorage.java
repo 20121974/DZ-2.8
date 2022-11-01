@@ -1,3 +1,5 @@
+package Passport;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,5 +17,6 @@ public class PassportStorage{//хранилище паспортов
     public void addPassport(PassportStorage PassportStorage){
         getPassportStorageMap().put(passportStorageMap.toString(), PassportStorage);
     }
+
 }
 

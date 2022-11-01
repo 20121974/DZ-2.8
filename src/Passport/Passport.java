@@ -1,8 +1,7 @@
-import java.util.HashMap;
-import java.util.Map;
+package Passport;
 
 public class Passport {
-    private String passportNumber;
+    private static String passportNumber;
     private String surname;//фамилия
     private String name;
     private String middleName;//отчество

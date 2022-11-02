@@ -12,7 +12,7 @@ public class Recipe {
     private int totalCostRecipe;// Суммарная стоимость всех продуктов у данного рецепта
 
 
-    public Recipe(String nameOfRecipe, ImageStrings recipe) {
+    public Recipe(String nameOfRecipe, ImageStrings recipe, String name, int count) {
         this.nameOfRecipe = nameOfRecipe;
         this.totalCostRecipe = totalCostRecipe;
     }

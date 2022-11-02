@@ -12,15 +12,16 @@ public class Number {
         return number;
     }
 
-    public void fullSetRandomNumber(Integer integer) {//полный набор случайных чисел
-        Random random = (Random) number;
-        for (Iterator<Integer> iterator = number.iterator(); iterator.hasNext(); ) {
-            Integer number = iterator.next();
-            if (number == 2) {
-                iterator.remove();
+    public Object fullSetRandomNumber(Integer integer) {//полный набор случайных чисел
+        int x;
+        Random random = new Random();
+        x = random.nextInt();
+        Integer number = x;
+            if (number % 2 == 0) {
+                System.out.println(getNumber());
             }
-        }
-        System.out.println(getNumber());
+        return null;
+
     }
     public static void main(String[] args) {
         Number.fullSetRandomNumbe();

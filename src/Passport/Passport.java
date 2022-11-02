@@ -1,20 +1,16 @@
 package Passport;
 
 public class Passport {
-    private static String passportNumber;
+    private String passportNumber;
     private String surname;//фамилия
     private String name;
     private String middleName;//отчество
     private String dateOfBirth;//дата рождения
 
 
-    private void put(Passport orDefault) {
-    }
-
-    public static Object getPassportNumber() {
+    public String getPassportNumber() {
         return passportNumber;
     }
-
     public String getSurname() {
         return surname;
     }

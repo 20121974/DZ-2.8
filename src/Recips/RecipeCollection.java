@@ -9,7 +9,7 @@ public class RecipeCollection {
 
     public static void addRecipe(Recipe recipe){
         for (var recipeInCollection:recipes) {
-            if (recipeInCollection.getNameOfRecipe().equals(recipe.getNameOfRecipe())) {
+            if (recipes.equals(recipes)) {
                 throw new RuntimeException("Такой рецепт уже есть");
             }
         }

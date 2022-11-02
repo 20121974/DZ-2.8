@@ -14,23 +14,25 @@ public class Recipe {
 
     public Recipe(String nameOfRecipe, ImageStrings recipe) {
         this.nameOfRecipe = nameOfRecipe;
-        this.totalCostRecipe = 0;
-        recipe.add(String.valueOf(this));
+        this.totalCostRecipe = totalCostRecipe;
     }
-    public void addProductOfRecipe(Product product, int requiredQuantity){
-        if (products.containsKey(product)){
+
+    public void addProductOfRecipe(Product product, int requiredQuantity) {
+        if (products.containsKey(product)) {
             throw new RuntimeException("Продукт уже добавлен в рецепт!");
         }
         products.put(product, requiredQuantity);
         //totalCostRecipe = totalCostRecipe + product.getPrice() * requiredQuantity;//требуемое количество
     }
-    public  int getCostForProduct(){
+
+    public int getCostForProduct() {
         int sum = 0;
         for (Product key : products.keySet()) {
             sum += products.get(key) * key.getPrice();
         }
         return sum;
     }
+
     @Override
     public String toString() {
         return "Recipes.Recipe{" +
@@ -43,18 +45,17 @@ public class Recipe {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Recipe recipe = (Recipe) o;
-        return totalCostRecipe == recipe.totalCostRecipe && nameOfRecipe.equals(recipe.nameOfRecipe) && products.equals(recipe.products);
+        return nameOfRecipe.equals(recipe.nameOfRecipe);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameOfRecipe, products, totalCostRecipe);
+        return Objects.hash(nameOfRecipe);
     }
 
     public double getTotalCostRecipe() {//общая стоимость продуктов в этом рецепте
         return totalCostRecipe;
     }
-
 
 
     public String getNameOfRecipe() {

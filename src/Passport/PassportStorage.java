@@ -16,9 +16,12 @@ public class PassportStorage{//хранилище паспортов
     }
 
     public void addPassport(Passport passport){
-        getPassportMap().put(passportMap.toString(), passport);
+        getPassportMap().put(passport.getPassportNumber(), passport);
     }
-
+    public Map<String, Passport> passportSearchByNumber(Passport passport) {
+        getPassportMap().get(passport);
+        return getPassportMap();
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -30,6 +33,15 @@ public class PassportStorage{//хранилище паспортов
     @Override
     public int hashCode() {
         return Objects.hash(passportMap);
+    }
+    public static void main(String[] args) {
+        Map<String, Integer> getPassportMap = new HashMap<>();
+        getPassportMap.put("4554", 455113);
+        getPassportMap.put("4553", 455114);
+        getPassportMap.put("4552", 455115);
+        System.out.println(getPassportMap.get("4554"));
+        System.out.println(getPassportMap.get("4553"));
+        System.out.println(getPassportMap.get("4552"));
     }
 }
 

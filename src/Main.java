@@ -10,11 +10,13 @@ public class Main {
             number.add(random.nextInt(1000));
         }
         System.out.println(number);
+
+        Iterator<Integer> iterator = number.iterator();
         for (int i = 0; i < number.size(); i++) {
-            if (number.get(i) % 2 !=0){
-                number.remove(i);
-                i = -1;
+            if (iterator.next() % 2 == 1) {
+                iterator.remove();
             }
-        }System.out.println(number);
+        }
+        System.out.println(Arrays.toString(number.toArray()));
     }
 }

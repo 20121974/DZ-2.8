@@ -18,9 +18,9 @@ public class PassportStorage{//хранилище паспортов
     public void addPassport(Passport passport){
         getPassportMap().put(passport.getPassportNumber(), passport);
     }
-    public Map<String, Passport> passportSearchByNumber(Passport passport) {
-        getPassportMap().get(passport);
-        return getPassportMap();
+    public String passportSearchByNumber(Passport passport) {//поиск паспорта по номеру
+        getPassportMap().get(passport.getPassportNumber());
+        return passport.getSurname() + passport.getName() + passport.getMiddleName() + passport.getDateOfBirth();
     }
     @Override
     public boolean equals(Object o) {

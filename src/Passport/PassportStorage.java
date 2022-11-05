@@ -6,6 +6,7 @@ import java.util.Objects;
 
 public class PassportStorage{//хранилище паспортов
     private Map<String, Passport> passportMap= new HashMap<>();
+    private Passport passportNumber;
 
     public PassportStorage(Map<String, Passport> passportMap) {
         this.passportMap = passportMap;
@@ -18,9 +19,9 @@ public class PassportStorage{//хранилище паспортов
     public void addPassport(Passport passport){
         getPassportMap().put(passport.getPassportNumber(), passport);
     }
-    public String passportSearchByNumber(Passport passport) {//поиск паспорта по номеру
-        getPassportMap().get(passport.getPassportNumber());
-        return passport.getSurname() + passport.getName() + passport.getMiddleName() + passport.getDateOfBirth();
+    public String passportSearchByNumber(Passport passportNumber) {
+        passportMap.get(passportMap);
+        return String.valueOf(passportMap);
     }
     @Override
     public boolean equals(Object o) {

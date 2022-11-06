@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class PassportStorage{//хранилище паспортов
     private Map<String, Passport> passportMap= new HashMap<>();
-    private Passport passportNumber;
+
 
     public PassportStorage(Map<String, Passport> passportMap) {
         this.passportMap = passportMap;
@@ -19,7 +19,7 @@ public class PassportStorage{//хранилище паспортов
     public void addPassport(Passport passport){
         getPassportMap().put(passport.getPassportNumber(), passport);
     }
-    public String passportSearchByNumber(Passport passportNumber) {
+    public String passportSearchByNumber(String passportNumber) {
         passportMap.get(passportMap);
         return String.valueOf(passportMap);
     }

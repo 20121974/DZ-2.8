@@ -20,8 +20,7 @@ public class PassportStorage{//хранилище паспортов
         getPassportMap().put(passport.getPassportNumber(), passport);
     }
     public String passportSearchByNumber(String passportNumber) {
-        passportMap.get(passportMap);
-        return passportMap.entrySet().toString();
+        return passportMap.values().toString();
     }
     @Override
     public boolean equals(Object o) {
